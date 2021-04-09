@@ -1,0 +1,35 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top; /* the top of the picture will be static, the crop will happen mostly on the bottom (or center), as the screen increases|decreases */
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+    }
+
+    &__logo {
+        height: 7rem;
+    }
+    
+    /* tip ===> put the ':hover' in the 'div element', to allow the 'logo' to do the animation, otherwise, if you put the ':hover' on the 'logo' it will freak out and start flickering */
+    &__logo-box:hover .header__logo {
+        animation: moveInRight 1s ease-out;
+    }
+    
+    &__text-box {
+       position: absolute;
+       top: 40%;
+       left: 50%;
+       transform: translate(-50%, -50%); 
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+
+}
