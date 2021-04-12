@@ -1,0 +1,18 @@
+.section-about {
+    background-color: $color-grey-light;
+    padding: 25rem 0;
+    margin-top: -20vh; // header section 95vh - 75vh of clip-path = 20vh
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/nat-4.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -15rem;
+
+    // Select the direct child, which will be the DIV ROW. If we remove the "direct symbol" , each child will skewY(7deg) + 17 + 21 ....
+    & > * {
+        transform: skewY(7deg);
+    }
+}
